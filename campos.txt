@@ -1,0 +1,83 @@
+Campos de datos  
+Aquí tienes una versión breve de lo que encontrarás en el archivo de descripción de los datos.
+
+**SalePrice** – el precio de venta de la propiedad en dólares. Esta es la variable objetivo que se intenta predecir.  
+**MSSubClass:** La clase del edificio.  
+**MSZoning:** La clasificación general de zonificación.  
+**LotFrontage:** Pies lineales de calle conectada a la propiedad.  
+**LotArea:** Tamaño del lote en pies cuadrados.  
+**Street:** Tipo de acceso vial.  
+**Alley:** Tipo de acceso por callejón.  
+**LotShape:** Forma general de la propiedad.  
+**LandContour:** Planitud de la propiedad.  
+**Utilities:** Tipo de servicios públicos disponibles.  
+**LotConfig:** Configuración del lote.  
+**LandSlope:** Pendiente de la propiedad.  
+**Neighborhood:** Ubicaciones físicas dentro de los límites de la ciudad de Ames.  
+**Condition1:** Proximidad a la carretera principal o a la vía del tren.  
+**Condition2:** Proximidad a la carretera principal o a la vía del tren (si hay una segunda).  
+**BldgType:** Tipo de vivienda.  
+**HouseStyle:** Estilo de la vivienda.  
+**OverallQual:** Calidad general del material y acabado.  
+**OverallCond:** Calificación general del estado.  
+**YearBuilt:** Año de construcción original.  
+**YearRemodAdd:** Fecha de remodelación.  
+**RoofStyle:** Tipo de techo.  
+**RoofMatl:** Material del techo.  
+**Exterior1st:** Revestimiento exterior de la casa.  
+**Exterior2nd:** Revestimiento exterior de la casa (si se usa más de un material).  
+**MasVnrType:** Tipo de revestimiento de mampostería.  
+**MasVnrArea:** Área del revestimiento de mampostería en pies cuadrados.  
+**ExterQual:** Calidad del material exterior.  
+**ExterCond:** Estado actual del material en el exterior.  
+**Foundation:** Tipo de cimentación.  
+**BsmtQual:** Altura del sótano.  
+**BsmtCond:** Estado general del sótano.  
+**BsmtExposure:** Exposición del sótano (acceso directo o a nivel del jardín).  
+**BsmtFinType1:** Calidad del área terminada del sótano.  
+**BsmtFinSF1:** Pies cuadrados terminados tipo 1.  
+**BsmtFinType2:** Calidad del segundo área terminada (si está presente).  
+**BsmtFinSF2:** Pies cuadrados terminados tipo 2.  
+**BsmtUnfSF:** Pies cuadrados sin terminar del sótano.  
+**TotalBsmtSF:** Total de pies cuadrados del sótano.  
+**Heating:** Tipo de calefacción.  
+**HeatingQC:** Calidad y estado de la calefacción.  
+**CentralAir:** Aire acondicionado central.  
+**Electrical:** Sistema eléctrico.  
+**1stFlrSF:** Pies cuadrados del primer piso.  
+**2ndFlrSF:** Pies cuadrados del segundo piso.  
+**LowQualFinSF:** Pies cuadrados terminados de baja calidad (en todos los pisos).  
+**GrLivArea:** Área habitable sobre el nivel del suelo en pies cuadrados.  
+**BsmtFullBath:** Número de baños completos en el sótano.  
+**BsmtHalfBath:** Número de medios baños en el sótano.  
+**FullBath:** Número de baños completos sobre el nivel del suelo.  
+**HalfBath:** Número de medios baños sobre el nivel del suelo.  
+**Bedroom:** Número de dormitorios por encima del nivel del sótano.  
+**Kitchen:** Número de cocinas.  
+**KitchenQual:** Calidad de la cocina.  
+**TotRmsAbvGrd:** Total de habitaciones sobre el nivel del suelo (no se incluyen los baños).  
+**Functional:** Calificación de funcionalidad del hogar.  
+**Fireplaces:** Número de chimeneas.  
+**FireplaceQu:** Calidad de la chimenea.  
+**GarageType:** Ubicación o tipo de garaje.  
+**GarageYrBlt:** Año en que se construyó el garaje.  
+**GarageFinish:** Acabado interior del garaje.  
+**GarageCars:** Capacidad del garaje en número de autos.  
+**GarageArea:** Tamaño del garaje en pies cuadrados.  
+**GarageQual:** Calidad del garaje.  
+**GarageCond:** Estado del garaje.  
+**PavedDrive:** Entrada pavimentada.  
+**WoodDeckSF:** Área de la terraza de madera en pies cuadrados.  
+**OpenPorchSF:** Área del porche abierto en pies cuadrados.  
+**EnclosedPorch:** Área del porche cerrado en pies cuadrados.  
+**3SsnPorch:** Área del porche de tres estaciones en pies cuadrados.  
+**ScreenPorch:** Área del porche con mosquitero en pies cuadrados.  
+**PoolArea:** Área de la piscina en pies cuadrados.  
+**PoolQC:** Calidad de la piscina.  
+**Fence:** Calidad de la cerca.  
+**MiscFeature:** Característica adicional no cubierta en otras categorías.  
+**MiscVal:** Valor en dólares de la característica adicional.  
+**MoSold:** Mes de venta.  
+**YrSold:** Año de venta.  
+**SaleType:** Tipo de venta.  
+**SaleCondition:** Condición de la venta.
