@@ -1,6 +1,15 @@
-﻿using System;
+using System;
+
+
 class Perceptron
 {
+    // Función sigmoidal
+    static double Sigmoide(double x)
+    {
+        return 1 / (1 + Math.Exp(-x));
+    }
+
+
     static void Main(string[] args)
     {
         // Variables climáticas (fijas en cada iteración)
@@ -11,14 +20,29 @@ class Perceptron
         double D = 90;     // Dirección del Viento
         double Prec = 0.2; // Precipitación
         double N = 50;     // Nubosidad
-        // Pesos iniciales
-        double[] W = new double[7] { 0.30, -0.50, 0.15, -0.20, 0.40, -0.60, 0.10 };
-        double theta = 0.40; // Umbral inicial
-        double alpha = 0.00001; // Tasa de aprendizaje (más estable)
-        // Simulación de 15 iteraciones
-        for (int iter = 1; iter <= 15; iter++)
+
+
+        // Pesos iniciales (aleatorizados para evitar que empiecen ya cerca de una solución)
+        Random rand = new Random();
+        double[] W = new double[7];
+        for (int i = 0; i < W.Length; i++)
         {
-            // Propagación hacia adelante (cálculo de Y)
+            W[i] = rand.NextDouble() - 0.5;  // Pesos iniciales entre -0.5 y 0.5
+        }
+
+
+        double theta = rand.NextDouble() - 0.5; // Umbral inicial aleatorizado
+        double alpha = 0.1;  // Tasa de aprendizaje ajustada
+
+
+        // Valores deseados (supongamos que los tenemos para cada iteración)
+        double[] valoresDeseados = new double[] { 0.1, 0.5, 0.2, 0.7, 0.4, 0.6, 0.8, 0.3, 0.5, 0.9, 0.7, 0.6, 0.2, 0.3, 0.8 };
+
+
+        // Simulación de 15 iteraciones
+        for (int iter = 0; iter < 15; iter++)
+        {
+            // Propagación hacia adelante (cálculo de Y lineal antes de la función sigmoidal)
             double Y = (T * W[0]) +
                        (HR * W[1]) +
                        (P * W[2]) +
@@ -26,12 +50,20 @@ class Perceptron
                        (D * W[4]) +
                        (Prec * W[5]) +
                        (N * W[6]) - theta;
+
+
+            // Aplicar la función de activación sigmoidal
+            double Y_activacion = Sigmoide(Y);
+
+
             // Se limita el valor de Y a dos decimales
-            Y = Math.Round(Y, 2);
+            Y_activacion = Math.Round(Y_activacion, 2);
 
 
-            // Error (suponiendo que el valor deseado sea 0 para este ejemplo)
-            double error = 0 - Y;
+            // Error (en base al valor deseado de la iteración actual)
+            double error = valoresDeseados[iter] - Y_activacion;
+
+
             // Actualización de los pesos y theta
             W[0] += alpha * error * T;
             W[1] += alpha * error * HR;
@@ -41,8 +73,10 @@ class Perceptron
             W[5] += alpha * error * Prec;
             W[6] += alpha * error * N;
             theta -= alpha * error;
+
+
             // Mostrar los resultados de la iteración
-            Console.WriteLine($"Iteración {iter}:");
+            Console.WriteLine($"Iteración {iter + 1}:");
             Console.WriteLine($"Peso 1 = {Math.Round(W[0], 2)}");
             Console.WriteLine($"Peso 2 = {Math.Round(W[1], 2)}");
             Console.WriteLine($"Peso 3 = {Math.Round(W[2], 2)}");
@@ -51,7 +85,7 @@ class Perceptron
             Console.WriteLine($"Peso 6 = {Math.Round(W[5], 2)}");
             Console.WriteLine($"Peso 7 = {Math.Round(W[6], 2)}");
             Console.WriteLine($"Theta = {Math.Round(theta, 2)}");
-            Console.WriteLine($"Salida Activación = {Y}");
+            Console.WriteLine($"Salida Activación (Sigmoidal) = {Y_activacion}");
             Console.WriteLine($"Error = {Math.Round(error, 2)}");
             Console.WriteLine("---------------------------------");
         }
